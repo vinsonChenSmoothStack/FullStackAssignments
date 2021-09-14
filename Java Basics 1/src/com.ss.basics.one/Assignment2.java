@@ -1,4 +1,6 @@
-import java.util.*;
+package com.ss.basics.one;
+
+import java.util.Random;
 
 public class Assignment2 {
     public static void main(String[] args) throws Exception {
