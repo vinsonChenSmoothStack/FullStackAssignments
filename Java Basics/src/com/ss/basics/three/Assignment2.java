@@ -1,51 +1,45 @@
 package com.ss.basics.three;
 
-import java.util.Random;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.io.BufferedWriter;
+import java.io.IOException;
 
+/*
+ * Will take two arguments: File Directory and string to append
+ * Appends all of the strings into the file.
+ */
 public class Assignment2 {
-    public static void main(String[] args){
-        Random rand = new Random();
-        int[][] arr = new int[10][10];
-        for(int i = 0; i < 10; i++){
-            for (int j = 0; j < 10; j++){
-                arr[i][j] = rand.nextInt(1000);
-            }
+    public static void main(String[] args) throws IOException{
+        FileWriter writeFile = null;
+        PrintWriter printFile = null;
+        BufferedWriter bufFile = null;
+        if (args.length == 0){
+            System.out.printf("No arguments given!\n");
+            return;
         }
-
-
-        int max = 0;
-        int iLoc = -1;
-        int jLoc = -1;
-        for (int i = 0; i < arr.length; i++){
-            for (int j = 0; j < arr[i].length; j++){
-                if (max < arr[i][j]){
-                    max = arr[i][j];
-                    iLoc = i;
-                    jLoc = j;
+        try{
+            writeFile = new FileWriter(args[0], true);
+            bufFile = new BufferedWriter(writeFile);
+            printFile = new PrintWriter(bufFile);
+            
+            for (int i = 1; i < args.length; i++){
+                printFile.printf("%s", args[i]);
+                if (i != args.length - 1){
+                    printFile.printf(" ");
+                }
+                else{
+                    printFile.printf("\n");
                 }
             }
+            printFile.flush();
+        } catch (IOException e){
+            System.out.printf("Cannot find file: %s", args[0]);
         }
-
-        Assignment2 asgn2 = new Assignment2();
-        asgn2.print2DArray(arr);
-        System.out.printf("Max Item in array is %d in location (%d, %d).\n", max, iLoc, jLoc);
-    }
-
-    public void print2DArray(int[][] arr){
-        System.out.printf("[");
-        for (int i = 0; i < arr.length; i++){
-            System.out.printf("[");
-            for (int j = 0; j < arr[i].length; j++){
-                System.out.printf("%d", arr[i][j]);
-                if (j != arr[i].length - 1){
-                    System.out.printf(",");
-                }
-            }
-            System.out.printf("]");
-            if (i != arr.length - 1){
-                System.out.printf(",\n");
-            }
+         finally {
+            writeFile.close();
+            printFile.close();
+            bufFile.close();
         }
-        System.out.printf("]\n");
     }
 }
