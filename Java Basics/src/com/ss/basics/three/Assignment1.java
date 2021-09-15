@@ -1,17 +1,29 @@
-package com.ss.basics.two;
+package com.ss.basics.three;
+
+import java.io.File;
 
 public class Assignment1 {
     public static void main(String[] args){
-        int total = 0;
-        for (String arg: args){
-            try{
-                Integer i = Integer.parseInt(arg);
-                total = total + i;
-            } 
-            catch (Exception e){
-                System.out.printf("'%s' cannot be turned into an integer!\n", arg);
+        if (args.length == 0){
+            System.out.printf("No arguments\n");
+            return;
+        }
+        Assignment1 asgn1 = new Assignment1();
+        asgn1.printDirectory(args[0], "");
+
+    }
+
+    private void printDirectory(String dirLoc, String prep){
+        File dir = new File(dirLoc);
+
+        for (File file : dir.listFiles()){
+            if (file.isFile()){
+                System.out.printf("%s %s\n", prep, file.getName());
+            }
+            else if (file.isDirectory()){
+                System.out.printf("%s>%s\n", prep, file.getName());
+                printDirectory(dirLoc+"/"+file.getName(), prep+"  ");
             }
         }
-        System.out.printf("Sum of the integer arguments: %d\n", total);
     }
 }

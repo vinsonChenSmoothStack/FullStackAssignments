@@ -1,4 +1,4 @@
-package com.ss.basics.two;
+package com.ss.basics.three;
 
 import java.util.Random;
 
