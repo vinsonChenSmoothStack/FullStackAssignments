@@ -1,5 +1,7 @@
+package com.ss.basics.two;
+
 public class Assignment1 {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args){
         int total = 0;
         for (String arg: args){
             try{

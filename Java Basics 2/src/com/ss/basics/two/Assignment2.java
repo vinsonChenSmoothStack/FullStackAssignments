@@ -1,3 +1,5 @@
+package com.ss.basics.two;
+
 import java.util.Random;
 
 public class Assignment2 {
