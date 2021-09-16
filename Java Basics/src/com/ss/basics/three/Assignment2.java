@@ -6,8 +6,9 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 
 /*
- * Will take two arguments: File Directory and string to append
- * Appends all of the strings into the file.
+ * Assignment 2 ---
+ * Takes 2+ command line argument: path of file to append, Words to append to the file
+ * All command line arguments after the first argument will be appended to the file.
  */
 public class Assignment2 {
     public static void main(String[] args) throws IOException{

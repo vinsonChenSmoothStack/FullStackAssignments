@@ -2,6 +2,12 @@ package com.ss.basics.three;
 
 import java.io.File;
 
+/*
+ * Assignment 1 ---
+ * Takes 1 command line argument: path of directory
+ * Prints out all files and sub directories in the directory.
+ */
+
 public class Assignment1 {
     public static void main(String[] args){
         if (args.length == 0){
