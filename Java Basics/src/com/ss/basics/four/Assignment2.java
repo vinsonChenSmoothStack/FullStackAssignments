@@ -15,7 +15,7 @@ public class Assignment2 extends Thread {
         Runnable thr2 = new Runnable(){
             @Override
 			public void run() {
-                asgn2.deadlockFunct(asgn1, 1);
+                asgn2.deadlockFunct(asgn1);
                 asgn1.undeadLocked();
                 System.out.printf("Done with Thread2\n");
 			}
