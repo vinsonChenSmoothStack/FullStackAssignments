@@ -1,0 +1,13 @@
+1) Which class would you use to store your birthday in years, months, days, seconds, and nanoseconds?
+I would use a LocalDate object to store the date and time of my birthday. 
+
+2) Given a random date, how would you find the date of the previous Thursday?
+use the function getDayOfWeek() and get getDayofMonth(). Day of week will give a enum of Sun - Saturday. 
+We can use this to subtract the value on getDayofMonth() to find the date of the previous Thursday.
+
+3) What is the difference between a ZoneId and a ZoneOffset?
+ZoneId talks about your local Zone (Example PDT/EST). ZoneOffset checks the difference between our local zone and UTC.
+
+4) How would you convert an Instant to a ZonedDateTime? How would you convert a ZonedDateTime to an Instant?
+you can use a toInstant() to change a ZonedDateTime to an instant. 
+You can use atZone(<Zone Location>) to change a zone to an instant.
