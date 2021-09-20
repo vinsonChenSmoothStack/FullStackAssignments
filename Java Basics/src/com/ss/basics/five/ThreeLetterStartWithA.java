@@ -4,8 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public interface ThreeLetterStartWithA {
-    
+public class ThreeLetterStartWithA {
+    public List<String> threeLetterLowerCaseA(List<String> strArr){
+        return strArr.stream()
+                        .filter((item) -> {return item.length() == 3 && item.charAt(0) == 'a';})
+                        .collect(Collectors.toList());
+        //returnValue.forEach((item) -> System.out.printf("%s\n", item));
+    }
     public static void main(String[] args){
 
         List<String> strArr = new ArrayList<String>();
