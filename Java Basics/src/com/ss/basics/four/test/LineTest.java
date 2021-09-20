@@ -22,7 +22,7 @@ public class LineTest {
 
     @Test
 	public void line1Distance() {
-        assertEquals(Double.valueOf(1.414214), Double.valueOf(line1.getDistance()), Double.valueOf(0.0001));
+        assertEquals(Double.valueOf(2.82842), Double.valueOf(line1.getDistance()), Double.valueOf(0.0001));
 	}
 	
 	@Test
